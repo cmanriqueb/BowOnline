@@ -20,7 +20,7 @@ export const StudentContactFormComponent = () => {
         <form onSubmit={handleSubmit}>
           <h3>Full Name</h3>
           <input type="text"
-              placeholder="Type your username"
+              placeholder="Type your full name"
               className="form-control"
               name="fulName"
               autoComplete="off"
@@ -28,7 +28,7 @@ export const StudentContactFormComponent = () => {
           <br />
           <h3>e-mail</h3>
           <input type="text"
-              placeholder="Type your username"
+              placeholder="Type your email"
               className="form-control"
               name="email"
               autoComplete="off"
@@ -43,13 +43,8 @@ export const StudentContactFormComponent = () => {
           />
           <br />
           <button className="bnt btn-outline-primary">
-              Search
+              Submit
           </button>
-          <br />
-          <br />
-          <Link to="/sSignup">
-            New User? Sign-up here
-          </Link>
         </form>
       </div>
     </div>
