@@ -1,43 +1,69 @@
-export const StudentSignUpComponent = () => {
+import {Link, useNavigate } from "react-router-dom";
+//import queryString from 'query-string';
+//import {useForm} from '../../hooks/useForm';
+
+
+export const StudentSignUpComponent =  () => {
+  const navigate = useNavigate();
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    // 👇️ redirect to /sCourses
+    navigate('/sCourses');
+  };
+  
+  // const location = useLocation();
+  // const {q=''} = queryString.parse(location.search);
+ 
+  //  const {searchText, onInputChange} = useForm({
+  //    searchText: q
+  //  });
+ 
+  //  const onSearchSubmit = (event) => {
+  //    event.preventDefault();
+  //    console.log({searchText});
+  //    navigate(`?q=${searchText}`);
+  //  }
     return (
-        <form action="/sCourses">
-          <h3>Sign Up</h3>
-          <div className="mb-3">
-            <label>First name</label>
-            <input
-              type="text"
+      <div className="row justify-content-center">
+        <div className="col-5 ">
+        <h4>STUDENT SIGN UP</h4>
+        <hr />
+        <form onSubmit={handleSubmit}>
+          <h3>Full Name</h3>
+          <input type="text"
+              placeholder="Type your username"
               className="form-control"
-              placeholder="First name"
-            />
-          </div>
-          <div className="mb-3">
-            <label>Last name</label>
-            <input type="text" className="form-control" placeholder="Last name" />
-          </div>
-          <div className="mb-3">
-            <label>Email address</label>
-            <input
-              type="email"
+              name="fulName"
+              autoComplete="off"
+          />
+          <br />
+          <h3>e-mail</h3>
+          <input type="text"
+              placeholder="Type your username"
               className="form-control"
-              placeholder="Enter email"
-            />
-          </div>
-          <div className="mb-3">
-            <label>Password</label>
-            <input
-              type="password"
+              name="email"
+              autoComplete="off"
+          />
+          <br />
+          <h3>password</h3>
+          <input type="password"
+              placeholder="Type your password"
               className="form-control"
-              placeholder="Enter password"
-            />
-          </div>
-          <div className="d-grid">
-            <button type="submit" className="btn btn-primary">
-              Sign Up
-            </button>
-          </div>
-          <p className="forgot-password text-right">
-            Already registered <a href="/sLogin">sign in?</a>
-          </p>
+              name="[password]"
+              autoComplete="off"
+          />
+          <br />
+          <button className="bnt btn-outline-primary">
+              Search
+          </button>
+          <br />
+          <br />
+          <Link to="/sSignup">
+            New User? Sign-up here
+          </Link>
         </form>
-      )
-}
+      </div>
+    </div>
+    )
+  }
