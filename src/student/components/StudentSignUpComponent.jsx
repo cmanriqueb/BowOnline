@@ -11,19 +11,6 @@ export const StudentSignUpComponent =  () => {
     // 👇️ redirect to /sCourses
     navigate('/sCourses');
   };
-  
-  // const location = useLocation();
-  // const {q=''} = queryString.parse(location.search);
- 
-  //  const {searchText, onInputChange} = useForm({
-  //    searchText: q
-  //  });
- 
-  //  const onSearchSubmit = (event) => {
-  //    event.preventDefault();
-  //    console.log({searchText});
-  //    navigate(`?q=${searchText}`);
-  //  }
     return (
       <div className="row justify-content-center">
         <div className="col-5 ">
