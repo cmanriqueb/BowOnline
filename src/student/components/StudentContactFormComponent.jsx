@@ -1,38 +1,57 @@
+import {Link, useNavigate } from "react-router-dom";
+//import queryString from 'query-string';
+//import {useForm} from '../../hooks/useForm';
+
+
 export const StudentContactFormComponent = () => {
-  return (
-    <form action="/sHomePage" id="contactForm">
-    <h3>Student Contact Form</h3>
-    <div className="mb-3">
-      <label>First name</label>
-      <input
-        type="text"
-        className="form-control"
-        placeholder="First name"
-      />
+  const navigate = useNavigate();
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    // 👇️ redirect to /sCourses
+    navigate('/sCourses');
+  };
+    return (
+      <div className="row justify-content-center">
+        <div className="col-5 ">
+          <br /><br /><br />
+        <h4>STUDENT CONTACT FORM</h4>
+        <hr />
+        <form onSubmit={handleSubmit}>
+          <h3>Full Name</h3>
+          <input type="text"
+              placeholder="Type your username"
+              className="form-control"
+              name="fulName"
+              autoComplete="off"
+          />
+          <br />
+          <h3>e-mail</h3>
+          <input type="text"
+              placeholder="Type your username"
+              className="form-control"
+              name="email"
+              autoComplete="off"
+          />
+          <br />
+          <h3>Message</h3>
+          <textarea
+              placeholder="Type your message"
+              className="form-control"
+              name="message"
+              autoComplete="off"
+          />
+          <br />
+          <button className="bnt btn-outline-primary">
+              Search
+          </button>
+          <br />
+          <br />
+          <Link to="/sSignup">
+            New User? Sign-up here
+          </Link>
+        </form>
+      </div>
     </div>
-    <div className="mb-3">
-      <label>Last name</label>
-      <input type="text" className="form-control" placeholder="Last name" />
-    </div>
-    <div className="mb-3">
-      <label>Email address</label>
-      <input
-        type="email"
-        className="form-control"
-        placeholder="Enter email"
-      />
-    </div>
-    <div className="mb-3">
-      <label>Message</label>
-      <br></br>
-      <textarea className="mb-3" rows="4" cols="80" name="comment" form="contactForm">
-            Enter text here...</textarea>
-    </div>
-    <div className="d-grid">
-      <button type="submit" className="btn btn-primary">
-        Submit
-      </button>
-    </div>
-  </form>
-  )
-}
+    )
+  }
