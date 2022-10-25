@@ -1,4 +1,5 @@
-export * from './CoursesListComponents';
 export * from './CourseCard';
-export * from './SearchResultCourseCard';
+export * from './CoursesListComponents';
+export * from './DisplayStudentCourses';
 export * from './SearchCourse';
+export * from './SearchResultCourseCard';

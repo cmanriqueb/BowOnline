@@ -1,4 +1,4 @@
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import queryString from 'query-string';
 import {useForm} from '../../hooks/useForm';
 import {getCourseByName} from '../helpers'
@@ -10,6 +10,7 @@ export const SarchCourse = () => {
  const location = useLocation();
  const {q=''} = queryString.parse(location.search);
  const courses = getCourseByName(q);
+ console.log(courses);
 
  const showSearchMessages = (q.length === 0);
  const showNotFoundMessage = (q.length > 0) && courses.length === 0;

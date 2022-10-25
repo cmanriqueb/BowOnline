@@ -5,7 +5,7 @@ export const courses = [
         'description': 'Project management1 - Term 1',
         'term' : 1,
         'start_date' : '01/10/2023',
-        'end_date' : '28/04/2023',
+        'end_date' : '04/28/2023',
         'fee' : 1850.50
     },
     {
