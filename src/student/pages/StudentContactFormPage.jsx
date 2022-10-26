@@ -1,10 +1,11 @@
-import { StudentContactFormComponent, StudentNavbar } from "../components"
+import {   StudentNavbar } from "../components"
+import StudentContactForm from "../components/StudentContactFormComponent"
 
 export const StudentContactFormPage = () => {
   return (
     <>
     <StudentNavbar />
-    <StudentContactFormComponent/>
+    <StudentContactForm/>
     </>
   )
 }
