@@ -1,10 +1,16 @@
 import { Routes, Route } from "react-router-dom"
+import {useEffect, useState} from 'react';
 
 import { AdminHomePage } from '../admin/pages/AdminHomePage';
+import {getCourses} from '../courses';
 import { StudentContactFormPage, StudentCoursePage , StudentCourseSearchPage, StudentHomePage, StudentLoginPage, StudentSignUpPage, StudentsRoutes } from '../student';
 import { WelcomePage } from "../ui/pages/WelcomePage";
 
 export const AppRouter = () => {
+
+  useEffect(() => {
+    localStorage.setItem('courses', JSON.stringify(getCourses()));
+  }, []); 
   return (
     <>
         <Routes>

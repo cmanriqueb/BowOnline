@@ -36,7 +36,7 @@ fee,
                             <h5 className="course-fee">FEE: {fee} CAD</h5>
                             <br />
                             <button className="bnt btn-outline-primary">
-                                Submit
+                                Enrol in course
                             </button>
                         </div>
                     </div>
