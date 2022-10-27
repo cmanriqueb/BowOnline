@@ -3,10 +3,20 @@ import { courses, enrolments } from "../data";
 
 export const getCoursesFromEnrolments = (studentID = '') => {
     if (studentID.length === 0) return[];
+    var studentEnrolments = [];
 
     studentID = studentID.toLocaleLowerCase().trim();
 
-    var studentEnrolments = enrolments.filter(enrolment => enrolment.studentId.toLocaleLowerCase().includes(studentID));
+    const enrolmentsJSON = localStorage.getItem('enrolments');
+
+    if(enrolmentsJSON){
+        studentEnrolments =  JSON.parse(enrolmentsJSON).filter(
+            enrolment => enrolment.studentId.toLocaleLowerCase().includes(studentID)
+        );
+    }else{
+        studentEnrolments = enrolments.filter(enrolment => enrolment.studentId.toLocaleLowerCase().includes(studentID));
+    }
+
     console.log('studentEnrolments');
     console.log(JSON.stringify(studentEnrolments));
 

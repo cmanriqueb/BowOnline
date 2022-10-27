@@ -1,21 +1,30 @@
-import { Link } from "react-router-dom";
-import { enrolments } from "../data";
-
 export const CourseCard = ({
 id,
 name,
-description,
 term,
 start_date,
 end_date,
 fee,
 }) => {
+
 const removeEnrol = (event,courseId) => {
     event.preventDefault();
-    console.log(courseId);
-    }
 
+    let enrolmentsJSON = JSON.parse(localStorage.getItem('enrolments'));
+
+    console.log(courseId.id);
+    for (let [i, enrolment] of enrolmentsJSON.entries()) {
+        if (enrolment.courseId === courseId.id) {
+            enrolmentsJSON.splice(i, 1); 
+        }
+      }
+    console.log(enrolmentsJSON);
+    sessionStorage.removeItem("enrolments"); 
+    localStorage.setItem('enrolments', JSON.stringify(enrolmentsJSON));
+}
   const imageURL = `/assets/bvc.jpg`;
+
+
   return (
     <div className="col">
         <form onSubmit={event => removeEnrol(event,{id})}>
@@ -27,7 +36,6 @@ const removeEnrol = (event,courseId) => {
                     <div className="col-8">
                         <div className="card-body">
                             <h5 className="course-tittle">{name}</h5>
-                            {/* <h5 className="course-description">{description}</h5> */}
                             <br/>
                             <h5 className="course-term">TERM {term}</h5>
                             <h5 className="course-start_date">START DATE: {start_date}</h5>

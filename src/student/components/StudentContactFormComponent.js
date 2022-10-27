@@ -9,28 +9,21 @@ class StudentContactFormComponent extends React.Component{
           message:''
         }
     }
-
      handleFullname=(event)=>{
         this.setState({
           fullName:event.target.value
         })
      }
-
-
      handleEmail=(event)=>{
         this.setState({
             email:event.target.value
         })
      }
-
-
      handleMessage=(event)=>{
         this.setState({
             message:event.target.value
         })
      }
-
-
      handleSubmit = event => {
       alert(`${this.state.fullName} your message was sent, you will recieve a reply on ${this.state.email}`)
       event.preventDefault(); //prevent default refresh

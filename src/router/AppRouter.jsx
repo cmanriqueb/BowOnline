@@ -1,15 +1,19 @@
 import { Routes, Route } from "react-router-dom"
-import {useEffect, useState} from 'react';
+import {useEffect} from 'react';
 
 import { AdminHomePage } from '../admin/pages/AdminHomePage';
 import {getCourses} from '../courses';
 import { StudentContactFormPage, StudentCoursePage , StudentCourseSearchPage, StudentHomePage, StudentLoginPage, StudentSignUpPage, StudentsRoutes } from '../student';
 import { WelcomePage } from "../ui/pages/WelcomePage";
+import { getEnrolments } from "../courses/helpers/getEnrolments";
 
 export const AppRouter = () => {
-
+  // Adding data to the localStorage
   useEffect(() => {
     localStorage.setItem('courses', JSON.stringify(getCourses()));
+  }, []); 
+  useEffect(() => {
+    localStorage.setItem('enrolments', JSON.stringify(getEnrolments()));
   }, []); 
   return (
     <>
