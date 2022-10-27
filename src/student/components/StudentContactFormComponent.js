@@ -5,7 +5,7 @@ class StudentContactFormComponent extends React.Component{
         super(props)
         this.state={
           fullName:'',
-          email:'Reading',
+          email:'',
           message:''
         }
     }
@@ -34,6 +34,11 @@ class StudentContactFormComponent extends React.Component{
      handleSubmit = event => {
       alert(`${this.state.fullName} your message was sent, you will recieve a reply on ${this.state.email}`)
       event.preventDefault(); //prevent default refresh
+      this.setState({
+        fullName:'',
+        email:'',
+        message:''
+      });
    }
    render(){
       const {fullName,email, message} = this.state 
